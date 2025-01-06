@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Mode To-Do App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-200 font-sans">
+  <div class="container mx-auto px-6 py-12">
+    <!-- To-Do App Container -->
+    <div class="max-w-lg mx-auto bg-gray-800 rounded-lg shadow-lg p-8">
+      <!-- Title -->
+      <h1 class="text-2xl font-semibold text-teal-400 mb-6 text-center">Dark Mode To-Do App</h1>
+
+      <!-- Input Field -->
+      <div class="flex items-center mb-6">
+        <input id="taskInput" type="text" placeholder="Enter a new task..." 
+               class="w-full p-3 rounded-lg bg-gray-700 text-gray-200 text-lg focus:outline-none focus:ring-2 focus:ring-teal-400" />
+        <button onclick="addTask()" class="ml-4 bg-teal-400 text-gray-900 text-lg py-3 px-6 rounded-lg hover:bg-teal-500 focus:outline-none">
+          Add
+        </button>
+      </div>
+
+      <!-- Task List -->
+      <div id="taskList" class="space-y-4">
+        <!-- Tasks will appear here -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Add a new task
+    function addTask() {
+      const taskInput = document.getElementById("taskInput");
+      const taskText = taskInput.value.trim();
+      
+      if (taskText === "") return;
+      
+      const taskList = document.getElementById("taskList");
+      
+      // Create task container
+      const taskDiv = document.createElement("div");
+      taskDiv.classList.add("flex", "items-center", "bg-gray-700", "p-4", "rounded-lg", "space-x-4");
+      
+      // Task text
+      const taskLabel = document.createElement("label");
+      taskLabel.textContent = taskText;
+      taskLabel.classList.add("text-gray-200", "text-lg", "flex-1", "cursor-pointer");
+      taskLabel.onclick = () => toggleTaskCompletion(taskLabel);
+      
+      // Delete button
+      const deleteButton = document.createElement("button");
+      deleteButton.textContent = "Delete";
+      deleteButton.classList.add("bg-red-500", "text-white", "px-4", "py-2", "rounded-lg", "hover:bg-red-600", "focus:outline-none");
+      deleteButton.onclick = () => deleteTask(taskDiv);
+
+      // Append task label and delete button to task div
+      taskDiv.appendChild(taskLabel);
+      taskDiv.appendChild(deleteButton);
+
+      // Append task to the task list
+      taskList.appendChild(taskDiv);
+      
+      // Clear the input field
+      taskInput.value = "";
+    }
+
+    // Toggle task completion
+    function toggleTaskCompletion(taskLabel) {
+      taskLabel.classList.toggle("line-through");
+      taskLabel.classList.toggle("text-teal-400");
+    }
+
+    // Delete task
+    function deleteTask(taskDiv) {
+      taskDiv.remove();
+    }
+  </script>
+</body>
+</html>
