@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-200 font-sans">
+  <div class="container mx-auto px-6 py-12">
+    <!-- Calculator Container -->
+    <div class="max-w-sm mx-auto bg-gray-800 rounded-lg shadow-lg p-8">
+      <!-- Title -->
+      <h1 class="text-2xl font-semibold text-teal-400 mb-6 text-center">Calculator</h1>
+
+      <!-- Display Screen -->
+      <div class="bg-gray-700 p-4 text-right text-3xl font-bold text-teal-400 rounded-lg mb-6" id="display">
+        0
+      </div>
+
+      <!-- Buttons -->
+      <div class="grid grid-cols-4 gap-4">
+        <button onclick="clearDisplay()" class="bg-gray-600 text-white text-xl py-3 rounded-lg hover:bg-teal-500 focus:outline-none">C</button>
+        <button onclick="appendToDisplay('/')"
+                class="bg-gray-600 text-white text-xl py-3 rounded-lg hover:bg-teal-500 focus:outline-none">/</button>
+        <button onclick="appendToDisplay('*')"
+                class="bg-gray-600 text-white text-xl py-3 rounded-lg hover:bg-teal-500 focus:outline-none">*</button>
+        <button onclick="appendToDisplay('-')"
+                class="bg-gray-600 text-white text-xl py-3 rounded-lg hover:bg-teal-500 focus:outline-none">-</button>
+
+        <button onclick="appendToDisplay('7')" class="bg-gray-600 text-white text-xl py-3 rounded-lg hover:bg-teal-500 focus:outline-none">7</button>
+        <button onclick="appendToDisplay('8')" class="bg-gray-600 text-white text-xl py-3 rounded-lg hover:bg-teal-500 focus:outline-none">8</button>
+        <button onclick="appendToDisplay('9')" class="bg-gray-600 text-white text-xl py-3 rounded-lg hover:bg-teal-500 focus:outline-none">9</button>
+        <button onclick="appendToDisplay('+')"
+                class="bg-gray-600 text-white text-xl py-3 rounded-lg hover:bg-teal-500 focus:outline-none">+</button>
+
+        <button onclick="appendToDisplay('4')" class="bg-gray-600 text-white text-xl py-3 rounded-lg hover:bg-teal-500 focus:outline-none">4</button>
+        <button onclick="appendToDisplay('5')" class="bg-gray-600 text-white text-xl py-3 rounded-lg hover:bg-teal-500 focus:outline-none">5</button>
+        <button onclick="appendToDisplay('6')" class="bg-gray-600 text-white text-xl py-3 rounded-lg hover:bg-teal-500 focus:outline-none">6</button>
+        <button onclick="calculate()" class="bg-teal-400 text-gray-900 text-xl py-3 rounded-lg hover:bg-teal-500 focus:outline-none">=</button>
+
+        <button onclick="appendToDisplay('1')" class="bg-gray-600 text-white text-xl py-3 rounded-lg hover:bg-teal-500 focus:outline-none">1</button>
+        <button onclick="appendToDisplay('2')" class="bg-gray-600 text-white text-xl py-3 rounded-lg hover:bg-teal-500 focus:outline-none">2</button>
+        <button onclick="appendToDisplay('3')" class="bg-gray-600 text-white text-xl py-3 rounded-lg hover:bg-teal-500 focus:outline-none">3</button>
+        <button onclick="appendToDisplay('0')" class="bg-gray-600 text-white text-xl py-3 rounded-lg hover:bg-teal-500 focus:outline-none">0</button>
+
+        <button onclick="appendToDisplay('.')"
+                class="bg-gray-600 text-white text-xl py-3 rounded-lg hover:bg-teal-500 focus:outline-none">.</button>
+        <button onclick="appendToDisplay('(')"
+                class="bg-gray-600 text-white text-xl py-3 rounded-lg hover:bg-teal-500 focus:outline-none">(</button>
+        <button onclick="appendToDisplay(')')"
+                class="bg-gray-600 text-white text-xl py-3 rounded-lg hover:bg-teal-500 focus:outline-none">)</button>
+        <button onclick="appendToDisplay('%')"
+                class="bg-gray-600 text-white text-xl py-3 rounded-lg hover:bg-teal-500 focus:outline-none">%</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let display = document.getElementById('display');
+
+    function appendToDisplay(value) {
+      if (display.innerText === '0') {
+        display.innerText = value;
+      } else {
+        display.innerText += value;
+      }
+    }
+
+    function clearDisplay() {
+      display.innerText = '0';
+    }
+
+    function calculate() {
+      try {
+        display.innerText = eval(display.innerText);
+      } catch (e) {
+        display.innerText = 'Error';
+      }
+    }
+  </script>
+</body>
+</html>
