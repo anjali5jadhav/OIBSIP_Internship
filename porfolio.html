@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+    <title>Portfolio</title>
+</head>
+<body>
+    <div class="main">
+        <nav>
+            <ul>
+                <li><a href="a">Home</a></li>
+                <li><a href="a">About</a></li>
+                <li><a href="a">Portfolio</a></li>
+                <li><a href="a">Services</a></li>
+                <li><a href="a">Hire me</a></li>
+            </ul>
+        </nav>
+
+        <div class="detail">
+            <h1>Hi!</h1>
+            <h1>I'm <span>Anjali</span>Jadhav</h1>
+            
+            <p>This Is My Official Portfolio Website To Show
+                <br>All Details And Work Experiance In Web Development
+            </p>
+            <a href="a">Download CV</a>
+
+            <div class="images">
+                <img src="B:\Projects\Portfolio\web.jpg" class="shape">
+                <img src=" " class="girl">
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="skill">Skills:</h1>
+        <img class="logo" src="B:\Projects\Portfolio\c- (1).png">
+        <img class="logo" src="B:\Projects\Portfolio\html.png">
+        <img class="logo" src="B:\Projects\Portfolio\java (1).png">
+        <img class="logo" src="B:\Projects\Portfolio\js (1).png">
+        <br>
+        <img class="logo" src="B:\Projects\Portfolio\letter-c.png">
+        <img class="logo" src="B:\Projects\Portfolio\mysql (1).png">
+        <img class="logo" src="B:\Projects\Portfolio\python.png">
+        <img class="logo" src="B:\Projects\Portfolio\social.png">
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+            <ul class="footer-icon">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
+
+<!-- CSS -->
+*{
+    margin:0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.main{
+    position: relative;
+    width: 80%;
+    height: 100vh;
+    background-color:white;
+}
+
+nav{
+    display: flex;
+    width: 82%;
+    margin: auto;
+    padding: 20px 0px;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+nav ul li{
+    margin-left: 30%;
+    display: inline-block;
+    list-style: none;
+    margin: 30px 20px;
+}
+
+nav ul li a{
+    margin-right: 50px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+nav ul li a:hover{
+    color: red;
+}
+
+.detail{
+    margin-left: 15%;
+    margin-top: 20%;
+}
+
+.detail h1{
+    font-size: 50px;
+    color: #212121;
+    margin-bottom: 20px;
+}
+
+span{
+    color: orange;
+}
+
+.detail p{
+    color: #555;
+    line-height: 22px;
+}
+
+.detail a{
+    background-color: black;
+    color: white;
+    padding: 10px 18px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin: 30px 0;
+    border-radius: 5px;
+}
+
+.detail a:hover{
+    box-shadow: 2px 2px 2px grey;
+}
+
+.images{
+    width: 45%;
+    height: 80%;
+    position: absolute;
+    bottom: 0;
+    right: 100px;
+}
+
+.shape{
+        height: 70px;
+        width: 700px;
+        margin-right: 50px;
+}
+
+.images img{
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate3d(-50%);
+    transition: bottom 1s,left 1s;
+}
+
+.skill{
+    background-color: white;
+    margin-left: 180px;
+}
+
+.logo{
+    background-color: white;
+    height: 100px;
+    width: 100px;
+    margin-top: 20px;
+    margin-left: 190px;
+    border-radius: 15px;
+}
+
+.logo:hover{
+    box-shadow: 2px 2px 2px grey;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: absolute;
+    bottom: -60%;
+    height: 70px;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-content p {
+    margin-bottom: 15px;
+}
+
+.footer-icon i{
+    margin-left: 20px;
+    font-size: 24px;
+}
+
+.footer-icon i:hover{
+    font-weight: bold;
+}
+
+
